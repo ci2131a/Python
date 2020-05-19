@@ -4,6 +4,7 @@ The Python programming language is a powerful tool when analyzing and interprett
 
 ## Introduction to Python
 
+## Using Python in R
 
 # Sources
 <a name="source"></a>
