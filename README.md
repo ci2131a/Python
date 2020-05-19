@@ -1,11 +1,15 @@
 # Exercise in Data Science using Python
 
-The Python programming language is a powerful tool when analyzing and interpretting varied types of data. This repository will hold various examples in using Python for data science.
+The Python programming language is a powerful tool when analyzing and interpretting varied types of data. This repository will hold various examples in using Python for data science. Files collected from work completed in traditional university classes as well as online classes. See [Sources](#source) for more information.
 
 ## Introduction to Python
 
 
 # Sources
+<a name="source"></a>
+## Traditional Classes
+
+## Online Classes
 Some of the notes stem from work done in the following courses:
 
  1. [LinkedIn Learning - Learning Python by Joe Marini](https://www.linkedin.com/learning/learning-python-2/welcome?u=50850177)
