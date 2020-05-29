@@ -4,6 +4,8 @@ Reference this section for notes to setup Python on your computer.
 
 ### Download Python
 
+The download for Python is free and can be done through the website. You can find the latest stable release [here](https://www.python.org/downloads/). Download the program for your relevant operating system or compile the source code manually. 
+
 ### Picking an IDE
 
 An **Integrated Development Environment (IDE)** is a specific type of text editor that can be used when programming. Selecting an IDE is an important task as these are programs with which you can edit text but more specifically edit the code you have written. Most of the code you write is going to be contained in a **script** which is a file that contains code waiting to be executed. The IDE will open the script file and allow you to mark it. Most IDEs also have the ability to check your code for any typos which is called a **syntax error**. Additionally, they allow you to run your code and display the output to you. While an advanced IDE is not required, it is strongly encouraged. 
@@ -20,3 +22,17 @@ One unusual IDE for Python is RStudio. Recently, the RStudio organization has be
 
 
 R & RStudio
+
+```{r}
+install.packages("reticulate")
+reticulate::
+
+reticulate::repl_python()
+```
+
+
+```{python}
+exit
+```
+
+See documentation for the R reticulate package for more information. 
