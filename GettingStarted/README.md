@@ -16,20 +16,32 @@ A last note on IDEs: it is possible to use a generic text editor to make changes
 
 #### IDLE
 
+
+
 #### RStudio
 
 One unusual IDE for Python is RStudio. Recently, the RStudio organization has been making a push to make its IDE a comprehensive program for use in data science. As noted in the top README, Python has wide applications to data science with methods to perform a number of processing and analysis techniques. However, RStudio was primarily designed for R which is a statistical programming language not generally used by traditional computer scientists nor Python programmers. So, why mention this as a possible IDE if it is not widely used? Well, the author of this repository is a statistician and uses R and RStudio quite regularly. Therefore, most of the Python in this repository was done through R and RStudio. If you are interested in using R and RStudio in addition to Python, follow the steps provided in the next paragraph to set up all 3 components. Otherwise, you can skip to the next section. (I mostly wanted to take this opportunity to plug R and RStudio ;) .)
 
 
-R & RStudio
+The R programming language can be downloaded from The Comprehensive R Archive Network (CRAN) [here](https://cran.r-project.org/). The RStudio IDE for R can be downloaded from their website [here](https://rstudio.com/).
 
+
+While RStudio is an IDE that primarily supports R through the console and environment that track R work for the most part, it can be setup for Python. The latest versions of RStudio already support opening Python `.py` scripts upon being installed. The R console can be setup to function as a Python console with the "reticulate" package. The following R code will setup install the aforementioned R package and a miniconda environment on your computer that can run Python.
+
+
+**R**
 ```{r}
-install.packages("reticulate")
-reticulate::
+install.packages("reticulate") # installs the R reticulate package
+reticulate::install_miniconda() # installs a miniconda environmnet 
+```
+After the above steps are complete the following R command will convert the R console to a Python console:
 
-reticulate::repl_python()
+**R**
+```{r}
+reticulate::repl_python() # starts a Python console
 ```
 
+To return from the Python console to the R console type the following Python command:
 
 ```{python}
 exit
