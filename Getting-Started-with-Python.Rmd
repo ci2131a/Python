@@ -1,4 +1,24 @@
-## Getting Started
+---
+title: "Getting Started with Python"
+author: "Charles Ingulli"
+date: "6/10/2020"
+output: 
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = FALSE)
+```
+
+
+The Python software is a type of programming language. 
+
+For more information on the Python programming language check out their [documents](https://www.python.org/doc/).
+
+
+Python is an Open Source and all releases fall under this category.
 
 Reference this section for notes to setup Python on your computer.
 
@@ -29,14 +49,14 @@ The R programming language can be downloaded from The Comprehensive R Archive Ne
 While RStudio is an IDE that primarily supports R through the console and environment that track R work for the most part, it can be setup for Python. The latest versions of RStudio already support opening Python `.py` scripts upon being installed. The R console can be setup to function as a Python console with the "reticulate" package. The following R code will setup install the aforementioned R package and a miniconda environment on your computer that can run Python.
 
 
-**R**
+**R:**
 ```{r}
 install.packages("reticulate") # installs the R reticulate package
 reticulate::install_miniconda() # installs a miniconda environmnet 
 ```
 After the above steps are complete the following R command will convert the R console to a Python console:
 
-**R**
+**R:**
 ```{r}
 reticulate::repl_python() # starts a Python console
 ```
@@ -44,6 +64,7 @@ reticulate::repl_python() # starts a Python console
 To return from the Python console to the R console type the following Python command:
 
 ```{python}
+#python
 exit
 ```
 

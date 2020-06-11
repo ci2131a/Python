@@ -1,6 +1,11 @@
 ## Intro to Python
 
-Find files containing exercises on fundamental topics of Python.
+Find files containing exercises on fundamental topics of Python. 
+
+
+The Python software is a type of programming language. 
+
+For more information on the Python programming language check out their [documents](https://www.python.org/doc/).
 
 ### Basics
 
