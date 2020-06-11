@@ -2,13 +2,12 @@
 
 The Python programming language is a powerful tool when analyzing and interpretting varied types of data. This repository will hold various examples in using Python for data science. Files collected from work completed in various locations such as traditional university classes as well as online classes. See [Sources](#source) for more information.
 
-Python is an Open Source and all releases fall under this category.
 
-## [Getting Started](GettingStarted/README.md)
+## [Getting Started with Python](https://htmlpreview.github.io/?https://github.com/ci2131a/Python/blob/master/Getting-Started-with-Python.html)
 
 Reference this section for notes to setup Python on your computer.
 
-## [Intro to Python](Intro/README.md)
+## [Introduction to Python](Intro/README.md)
 
 Find files containing exercises on fundamental topics of Python.
 
