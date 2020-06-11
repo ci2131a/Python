@@ -13,18 +13,14 @@ knitr::opts_chunk$set(echo = TRUE,
 ```
 
 
-The Python software is a type of programming language. 
+The Python software is a type of programming language. A **programming language** is used to create instructions for a computer that can achieve some desired result. Python is a **high-level** programming language meaning it abstracts away from the natural language of a computer so that it can present information in a more readable way to the user. This means that the programming language translates instructions that you write into a form that the computer can understand in order to produce some output that can be translated back to the programming language for the user to interpret.
 
 For more information on the Python programming language check out their [documents](https://www.python.org/doc/).
 
 
-Python is an Open Source and all releases fall under this category.
-
-Reference this section for notes to setup Python on your computer.
-
 ### Download Python
 
-The download for Python is free and can be done through the website. You can find the latest stable release [here](https://www.python.org/downloads/). Download the program for your relevant operating system or compile the source code manually. 
+Python is a free and open source software that can be downloaded through their website. You can find the latest stable release [here](https://www.python.org/downloads/). Download the program for your relevant operating system.
 
 ### Picking an IDE
 
@@ -49,22 +45,23 @@ The R programming language can be downloaded from The Comprehensive R Archive Ne
 While RStudio is an IDE that primarily supports R through the console and environment that track R work for the most part, it can be setup for Python. The latest versions of RStudio already support opening Python `.py` scripts upon being installed. The R console can be setup to function as a Python console with the "reticulate" package. The following R code will setup install the aforementioned R package and a miniconda environment on your computer that can run Python.
 
 
-**R:**
+**R :**
 ```{r}
 install.packages("reticulate") # installs the R reticulate package
 reticulate::install_miniconda() # installs a miniconda environmnet 
 ```
 After the above steps are complete the following R command will convert the R console to a Python console:
 
-**R:**
+**R :**
 ```{r}
 reticulate::repl_python() # starts a Python console
 ```
 
 To return from the Python console to the R console type the following Python command:
 
+
+**Python :**
 ```{python}
-#python
 exit
 ```
 

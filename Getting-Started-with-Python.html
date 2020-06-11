@@ -369,13 +369,11 @@ summary {
 </div>
 
 
-<p>The Python software is a type of programming language.</p>
+<p>The Python software is a type of programming language. A <strong>programming language</strong> is used to create instructions for a computer that can achieve some desired result. Python is a <strong>high-level</strong> programming language meaning it abstracts away from the natural language of a computer so that it can present information in a more readable way to the user. This means that the programming language translates instructions that you write into a form that the computer can understand in order to produce some output that can be translated back to the programming language for the user to interpret.</p>
 <p>For more information on the Python programming language check out their <a href="https://www.python.org/doc/">documents</a>.</p>
-<p>Python is an Open Source and all releases fall under this category.</p>
-<p>Reference this section for notes to setup Python on your computer.</p>
 <div id="download-python" class="section level3">
 <h3>Download Python</h3>
-<p>The download for Python is free and can be done through the website. You can find the latest stable release <a href="https://www.python.org/downloads/">here</a>. Download the program for your relevant operating system or compile the source code manually.</p>
+<p>Python is a free and open source software that can be downloaded through their website. You can find the latest stable release <a href="https://www.python.org/downloads/">here</a>. Download the program for your relevant operating system.</p>
 </div>
 <div id="picking-an-ide" class="section level3">
 <h3>Picking an IDE</h3>
@@ -390,15 +388,15 @@ summary {
 <p>One unusual IDE for Python is RStudio. Recently, the RStudio organization has been making a push to make its IDE a comprehensive program for use in data science. As noted in the top README, Python has wide applications to data science with methods to perform a number of processing and analysis techniques. However, RStudio was primarily designed for R which is a statistical programming language not generally used by traditional computer scientists nor Python programmers. So, why mention this as a possible IDE if it is not widely used? Well, the author of this repository is a statistician and uses R and RStudio quite regularly. Therefore, most of the Python in this repository was done through R and RStudio. If you are interested in using R and RStudio in addition to Python, follow the steps provided in the next paragraph to set up all 3 components. Otherwise, you can skip to the next section. (I mostly wanted to take this opportunity to plug R and RStudio ;) .)</p>
 <p>The R programming language can be downloaded from The Comprehensive R Archive Network (CRAN) <a href="https://cran.r-project.org/">here</a>. The RStudio IDE for R can be downloaded from their website <a href="https://rstudio.com/">here</a>.</p>
 <p>While RStudio is an IDE that primarily supports R through the console and environment that track R work for the most part, it can be setup for Python. The latest versions of RStudio already support opening Python <code>.py</code> scripts upon being installed. The R console can be setup to function as a Python console with the “reticulate” package. The following R code will setup install the aforementioned R package and a miniconda environment on your computer that can run Python.</p>
-<p><strong>R:</strong></p>
+<p><strong>R :</strong></p>
 <pre class="r"><code>install.packages(&quot;reticulate&quot;) # installs the R reticulate package
 reticulate::install_miniconda() # installs a miniconda environmnet </code></pre>
 <p>After the above steps are complete the following R command will convert the R console to a Python console:</p>
-<p><strong>R:</strong></p>
+<p><strong>R :</strong></p>
 <pre class="r"><code>reticulate::repl_python() # starts a Python console</code></pre>
 <p>To return from the Python console to the R console type the following Python command:</p>
-<pre class="python"><code>#python
-exit</code></pre>
+<p><strong>Python :</strong></p>
+<pre class="python"><code>exit</code></pre>
 <p>See documentation for the R reticulate package for more information.</p>
 </div>
 </div>

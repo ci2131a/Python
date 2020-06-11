@@ -1,0 +1,217 @@
+---
+title: "Introduction to Programming in Python"
+author: "Charles Ingulli"
+date: "5/12/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Introduction to Python
+
+
+
+
+Python scripts are denoted by the *.py* file type extension. Comments are denoted by the `#` symbol. 
+The boolean operators in Python are `True` and `False`. By default, Python does not have a read history for its commands. This means that pressing something such as the up arrow on your keyboard will not reload the previously run code into the console.
+
+
+Python doesnt have scope. It uses spaces to determine where lines belong. Spacing matters.
+
+
+# Misc Notes
+
+This means that anything followed by this symbol will not be considered code. It is good practice among programmers to make lots of comments in ones code explaining its function and implementation. It is beneficial for yourself and others in the long run to understand what is going on after breaks in working or trying to find errors.
+
+
+A variable in Python is a stored piece of information. This is done by first picking a name for your variable and then associating the desired information with that name. That way, anytime you refer to your chosen variable, Python will return the value that you stored. This can be overwritten if you assign new information to an already defined variable name. We explore these concepts with some examples below. 
+We can assign values to different variables. 
+
+
+
+
+def main(): defines the main function for the python file. If you have multiple different functions in the file you can keep the most crucial ones in the main function so they can be organized.
+
+
+if __name__ == "__main__":
+  main()
+
+the if name thing checks to see if the main function is there and executes this. It tells Python to execute the main function rather than other scripts and functions that may be embedded in the python script that should not be executed when loaded. 
+
+When Python file is run it assigns the name attribute to the main function and then executes the main function. This may be useful if you embedded different python files within other python files. in that case you may not want all the files to be executed when they are loaded so you do not envoke this work and allow other code to invoke them. z
+
+
+
+
+
+
+
+
+
+
+## Variables
+
+
+Variables in Python are defined by the `=` symbol. This is the assignment command and anything to the left is considered the variable name while anything to the right is the variable value.
+There are 3 different types of variables in Python and they are:
+
+1. String
+2. Float
+3. Integer
+
+
+
+
+```{python}
+f = 10
+print(f)
+f
+f = "ten"
+print(f)
+f
+```
+
+
+```{python}
+print("string" + "123")
+print(123 + 456)
+```
+
+
+```{python}
+f = 0
+def function():
+  f = 10
+  print(f)
+function()
+print(f)
+```
+
+
+## Functions
+
+We can define functions in Python to be able to automate some process.
+
+
+We must first define the function using `def` and then giving the function a name. In Python, the end of the function needs a scope definer which is the `:` symbol. Every subsequent and consecutive line that contains an indentation is considered part of the function. Note that Python is very particular about how spaces and indentations are included in code. Additionally, you must include `()` after your function name. This will contain any input values that should be supplied to your function. Even if your function does not take input arguments, it still needs the `()`. Inputs in programming functions are often called arguments. Why is that?
+
+```{python}
+# Basic Function
+def basicfun():
+  print("I am a function") # the command to be executed is intented once
+  # we can use the tab key for indentations
+
+basicfun()
+basicfun(12)
+```
+
+Functions can utilize the `print()` command to output the results of the function to the screen.
+Try to make some functions that take arguments.
+
+```{python}
+# Function with one input
+def function1(input1)
+  print("You picked ", str(input1), " as your input.")
+
+function1(74)
+
+# function with 2 inputs
+def function2(argument1,argument2):
+  print(argument1, " ", argument2)
+  
+function2("a","2")
+```
+
+
+```{python}
+# Function with return
+def function3(x):
+  return x*x*x
+  
+function3(2)
+print(function3(2))
+```
+
+
+```{python}
+# Vectorized function
+def function4(*arguments):
+  result = 0
+  for a in arguments:
+    result = result + a
+  return result
+# Function 4 basically takes a vector as an input with any number of elements
+# the for loop goes through each element in arguments and adds that number to result
+
+print(function4(4,5,10,4))
+```
+
+## Conditionals
+
+Programming languages use conditionals to make decisions. This is done through `if` statements.
+
+```{python}
+x = 0
+y = 10
+
+if (x < y):
+  st = "x is less than y"
+else: 
+  st = "x is not less than y"
+  
+print(st)
+
+
+if (x < y):
+  st = "x is less than y"
+elif (x == y):
+  st = "x is equal to y"
+else:
+  st = "x is greater than y"
+
+```
+
+
+## Classes
+
+These still seem like objects but I have no idea what is going on. 
+
+
+```{python}
+class myClass():
+  def method1(self):
+    print("myClass method1")
+    
+  def method2(self, someString):
+    print("myClass method2" + someString)
+    
+    
+class anotherClass():
+  def method1(self):
+    print("anotherClass method1")
+    
+  def method2(self, someString):
+    print("anotherClass method2" + someString)
+    
+    
+    
+def main():
+  c = myClass()
+  c.method1()
+  c.method2("This is a string")
+  
+  c2 = anotherClass()
+#  c2.method1()
+```
+
+# Simple Program
+
+
+
+# References 
+
+Adapted from the course https://www.linkedin.com/learning/learning-python-2/the-date-time-and-datetime-classes?u=50850177
+
