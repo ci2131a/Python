@@ -1,0 +1,86 @@
+---
+title: "Test"
+author: "Charles Ingulli"
+date: "2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Testing Pythin
+
+```{python}
+
+import urllib.request
+f = urllib.request.urlopen('http://www.python.org/')
+print(f.read(100).decode('utf-8'))
+
+```
+
+```{python}
+import urllib.request
+
+def main():
+  webUrl = urllib.request.urlopen("http://www.google.com")
+  print("Result code: "+ str(webUrl.getcode()))
+  data = webUrl.read()
+  print(data)
+  
+if __name__ == "__main__":
+  main()
+```
+#JSON Data
+Javascript option n? (JSON)
+
+GeoJSON summary 
+
+go over again
+
+```{python}
+import json
+import urllib.request
+
+def printResults(data):
+  theJSON = json.loads(data)
+  if "title" in theJSON["metadata"]:
+    print(theJSON["metadata"]["title"])
+  
+  count = theJSON["metadata"]["count"]
+  print(str(count)+" events recorded")
+    
+  for i in theJSON["features"]:
+    print(i["properties"]["place"])
+  print("-------------\n")
+    
+  for i in theJSON["features"]:
+    if i["properties"]["mag"] >= 4.0:
+      print("%2.1f" % i["properties"]["mag"], i["properties"]["place"])
+  print("-------------\n")
+  
+  print("Events that were felt:")
+  for i in theJSON["features"]:
+    feltReports = i["properties"]["felt"]
+    if feltReports != None:
+      if feltReports > 0:
+        print("%2.1f" % i["properties"]["mag"], i["properties"]["place"], " reported " +str(feltReports) +" times")
+  
+
+#def main():
+
+urldata = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson"
+
+weburl = urllib.request.urlopen(urldata)
+print("result code: " +str(weburl.getcode()))
+if (weburl.getcode()==200):
+  data = weburl.read()
+  printResults(data)
+else:
+  print("Received error, cannot print data.")
+
+#if __name__ == "__main__":
+#  main()
+
+```
+

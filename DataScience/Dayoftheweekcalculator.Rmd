@@ -1,0 +1,18 @@
+---
+title: "Untitled"
+author: "Charles Ingulli"
+date: "5/20/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Here is an example of a simple Python program that will tell you the day of the week for a given date. The code uses very basic commands and does not import any additional libraries. 
+
+
+This stems from a fun project from my introduction to computer science course at American University. The goal
+
+
+For more information on these day of the week calculators, see [this page](https://en.wikipedia.org/wiki/Perpetual_calendar) from Wikipedia.

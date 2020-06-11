@@ -1,0 +1,128 @@
+---
+title: "Dates and Times in Python"
+author: "Charles Ingulli"
+date: "5/21/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Working with Dates and Times
+
+Python has a set of libraries that add supplementary functionality to the program. For example, the datetime library offers different ways to manipulate date and time variables. In the code below, we import the date, time, and, datetime classes from the datetime library for use. This is code that is already written for us so we just have to tell Python that we want to use it. 
+
+Predefined functionality ontop of the standard code we have been using
+
+## Using the date, time, and datetime classes
+
+```{python}
+
+from datetime import date
+from datetime import time
+from datetime import datetime
+
+```
+
+
+Using the dot.
+
+The thing we imported, `date`, is a class. As discussed earlier, the classes we define will have different methods inside of them. If we would like to call a specific method inside the `date` class such as `day`, we can do so by implementing `date.day`.
+
+```{python}
+today = date.today()
+print("Today's date is ", today)
+
+print("Today's weekday is ", today.weekday())
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+print("Which is a ", days[today.weekday()])
+```
+
+```{python}
+todaytime = datetime.now()
+print("The current time is ", todaytime)
+
+t = datetime.time(datetime.now())
+```
+
+
+## Formating output
+
+Dates
+
+```{python}
+now = datetime.now()
+print(now.strftime("%a, %d %B, %y"))
+print(now.strftime("%a, %B %d, %Y"))
+```
+
+The Locale pulls the formating that is set to default on the machine you are using. 
+
+```{python}
+print(now.strftime("Locale date and time: %c"))
+print(now.strftime("Locale date: %x"))
+print(now.strftime("Locale time: %X"))
+```
+
+Times
+
+```{python}
+
+print(now.strftime("Current time: %I:%M:S %p"))
+print(now.strftime("24-hour time: %H:%M"))
+```
+
+
+## Calculating time date stuff
+
+Time based mathematics using the timedelta class.
+
+```{python}
+from datetime import timedelta
+
+print(timedelta(days = 365, hours = 5, minutes = 1))
+# create a time delta that represents 365 days, 5 hours, and 1 minute.
+
+now = datetime.now()
+print("Today is " + str(now))
+
+print("One year from now it will be " + str(now+timedelta(days = 365)))
+
+print("In 2 days and 3 weeks, it will be " + str(now+timedelta(days = 2, weeks = 3)))
+
+```
+
+```{python}
+t = datetime.now() - timedelta(weeks = 1)
+s = t.strftime("%A %B %d, %Y")
+print("One week ago it was " + s)
+```
+
+### Calculate the time until the next April Fools Day
+
+There is an error
+
+```{python}
+# Start by initializing today
+Today = date.today()
+AFD = date(today.year, 4, 1)
+# check if AFD happened
+if AFD < Today:
+  print("April Fool's Day for this year was %d days ago." % ((Today-AFD).days))
+  AFD = AFD.replace(year = Today.year+1)
+# calculate next AFD for next year
+time_to_AFD = AFD - Today
+print("There are " + str(time_to_AFD.days) + " days until April Fool's Day.")
+```
+
+## Calendars
+
+```{python}
+# Imports all of the classes in the calendar module
+import calendar
+
+c = calendar.TextCalendar(calendar.SUNDAY)
+st = c.formatmonth(2017,1,0,0)
+print(st)
+```

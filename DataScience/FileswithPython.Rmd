@@ -1,0 +1,235 @@
+---
+title: "Manipulating Files using Python"
+author: "Charles Ingulli"
+date: "May 21, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Python and Files
+
+Python has a number of different ways to manipulate files. There are different commands that allow you to read and parse different file data into Python for processing and exploration. Results can then be added to new files or existing files. Additionally, it is possible to access files from the internet and explore the information held there. This exercise will explore several different ways for working with files in Python.
+
+## Local Files
+
+We start with files that can exist on your local directory. Let's pick a location with which we can store all of the work we do.
+We can `import` the `os` module in order to change directories from within Python. The following `getcwd` method will print out the current working directory and `chdir` changes the directory to the path specified.
+
+```{python, eval = FALSE}
+import os
+os.getcwd()
+os.chdir("C:/Users/User/Desktop")
+```
+
+Python inherently knows how to work with files from base classes.
+
+### Writing
+
+
+
+
+```{python}
+
+# Open a file for writing and create it if it doesnt exist.
+file = open("textfile.txt", "w+")
+# the above overwrites anything that is already there
+  
+  
+  #file = open("textfile.txt", "a")
+  # append will keep existing stuff
+  # use r for read
+  
+  
+#  if file.mode == `r`:
+#    contents = file.read()
+#    print(contents)
+    
+    
+    
+#  if file.mode == `r`:
+#    lines = file.readlines()
+#    for line in lines:
+#      print(line)
+    
+    
+#if __name__ == "__main__":
+#  main()
+  
+```
+
+
+### paths?
+
+```{python}
+import os
+print(os.name)
+
+import os
+from os import path
+
+print("Item exists: " + str(path.exists("textfile.txt")))
+print("Item is a file: " + str(path.isfile("textfile.txt")))
+print("Item is a directory: " + str(path.isdir("textfile.txt")))
+
+print("Item path: " + str(path.realpath("textfile.txt")))
+print("Item path and name: " + str(path.split(path.realpath("textfile.txt")))
+
+
+import datetime
+from datetime import date, time, timedelta
+import time
+
+t = time.ctime(path.getmtime("textfile.txt"))
+print(t)
+
+td = datetime.datetime.name() - datetime.datetime.fromtimestamp(
+  pythonpath.getmtime("textfile.txt")
+)
+print("it has been " +str(td)+ " since the file was modified")
+print("Or, " + str(td.total_seconds()) + )
+
+```
+
+
+### Shell methods?
+
+```{python}
+
+import os
+from os import path
+import shutil
+from shutil import make_archive
+from zipfile import ZipFile
+
+if path.exists("textfile.txt"):
+  src = path.realpath("textfile.txt")
+  dst = src + ".bak" 
+  # adding the file type .bak to the textfile.txt file.
+  shutil.copy(src, dst)
+  shutil.copystat(src, dst)
+  
+  # this will rename the file so the following code will not run
+  #os.rename("textfile.txt", "newfile.txt")
+  
+  
+
+
+#from shutil import make_archive
+
+#root_dir, tail = path.split(src)
+#shutil.make_archive("archive", "zip", root_dir)
+  
+
+
+with ZipFile("testzip.zip", "w") as newzip:
+  newzip.write("textfile.txt")
+  newzip.write("textfile.txt.bak")
+
+```
+
+
+## Internet Files
+
+```{python}
+import urllib.request
+
+
+webUrl = urllib.request.urlopen("http://www.google.com")
+print("result.code: " + str(webUrl.getcode()))
+
+```
+
+
+
+### Parsing and processing HTML
+
+
+```{python}
+from html.parser import HTMLParser
+
+metacount = 0;
+
+class MyHTMLParser(HTMLParser):
+  def handle_comment(self, data):
+    print("Encountered comment: ", data)
+    pos = self.getpos()
+    print("\tAt line: ", pos[0], " position ", pos[1])
+  
+  def handle_starttag(self, tag, attrs):
+    global metacount
+    if tag == 'meta':
+      metacount += 1
+    print("Encountered tag: ", tag)
+    pos = self.getpos()
+    print("\tAt line: ", pos[0], " position ", pos[1])
+    
+    if attrs.__len__() > 0:
+      print("\tAttributes:")
+      for a in attrs:
+        print("\t", a[0], "=", a[1])
+    
+  def handle_endtag(self, tag):
+    print("Encountered tag: ", tag)
+    pos = self.getpos()
+    print("\tAt line: ", pos[0], " position ", pos[1])
+    
+    
+  def handle_data(self, data):
+    if data.isspace():
+      return
+    print("Encountered data: ", data)
+    pos = self.getpos()
+    print("\tAt line: ", pos[0], " position ", pos[1])
+      
+def main():
+  parser = MyHTMLParser()
+  f = open("samplehtml.html")
+  if f.mode == 'r':
+    contents = f.read()
+    parser.feed(contents)
+    
+  print("Meta tags found: " + str(metacount))
+    
+    
+if __name__ == "__main__":
+  main()
+  
+```
+
+
+### Manipulating XML
+
+```{python}
+import xml.dom.minidom
+
+def main():
+  doc = xml.dom.minidom.parse("samplexml.xml")
+  print(doc.nodeName)
+  print(doc.firstChild.tagName)
+  
+  skills = doc.getElementsByTagName("skill")
+  print("%d skills: " % skills.length)
+  for skill in skills: 
+    print(skill.getAttribute("name"))
+    
+  newSkill = doc.createElement("skill")
+  newSkill.setAttribute("name", "jQuery")
+  doc.firstChild.appendChild(newSkill)
+  
+  skills = doc.getElementsByTagName("skill")
+  print("%d skills: " % skills.length)
+  for skill in skills: 
+    print(skill.getAttribute("name"))
+  
+if __name__ == "__main__":
+  main()
+```
+
+
+# References
+
+

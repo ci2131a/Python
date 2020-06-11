@@ -1,0 +1,113 @@
+---
+title: "Data Science in Python"
+author: "Charles Ingulli"
+date: "6/2/2020"
+output: 
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Pandas data frames and manipulation 
+NumbPy arrays and matrices
+SciPy
+
+matplotlib
+seaborn  all for plotting
+
+algorithmic such as
+Scikit-learn has ml reg and classif 
+Statsmodels
+
+
+
+# Reading in data
+
+there are various formats
+
+tsv csv json xlsx
+
+```{python}
+import pandas as pd
+data = ""
+df = pd.read_csv(,header = None)
+```
+
+
+
+```{python}
+df.head(10)
+df.tail(10)
+df.columns = ["col1","col2"]
+```
+
+```{python}
+df.to_csv("C:User/Desktop")
+```
+
+
+# Analyzing data
+
+```{python}
+df.dtypes()
+df.describe() # for numeric only; excludes non-number
+df.describe(include = "all")
+df.info() # top & bottom 30 rows
+```
+
+## COnect to DB
+
+
+
+What is a DBMS?
+What is an API call?
+
+Application Programming Interface (API) is a set of functions that allow you to access certain service. 
+
+
+Connect to database then run querey 
+
+How does Python contact the DBMS with an API call?
+```{python}
+from dbmodule import connect
+
+connection = connect("databasename", "username", "pswd")
+
+cursor = connection.cursor()
+
+cursor.execute("select * from mytable")
+results = cursor.fetchall()
+
+cursor.close()
+connection.close()
+
+
+```
+
+
+
+#PRocessessing 
+
+There can be missing values for a variety of reasons
+
+Operations are perfomed on columns 
+
+```{python}
+df["column"]
+```
+
+
+## Missing
+
+could be ? NA 0 
+
+
+Fixing errors and finding what missing value should be 
+
+You can drop data by dropping a variable with a lot of missing entries or deleting specific entries. This is not great because you lose information. 
+
+
