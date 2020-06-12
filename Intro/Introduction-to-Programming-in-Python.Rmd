@@ -2,7 +2,7 @@
 title: "Introduction to Programming in Python"
 author: "Charles Ingulli"
 date: "5/12/2020"
-output: pdf_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -10,12 +10,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-# Introduction to Python
+If you have not already set up Python on your computer, check out [these notes](https://htmlpreview.github.io/?https://github.com/ci2131a/Python/blob/master/Getting-Started-with-Python.html) to download and install the Python programming language. 
 
 
 
-
-Python scripts are denoted by the *.py* file type extension. Comments are denoted by the `#` symbol. 
+Python is generally regarded as an easy programming language to learn and is used in many introductory courses. Python scripts are denoted by the *.py* file type extension. Comments are denoted by the `#` symbol. 
 The boolean operators in Python are `True` and `False`. By default, Python does not have a read history for its commands. This means that pressing something such as the up arrow on your keyboard will not reload the previously run code into the console.
 
 
