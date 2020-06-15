@@ -1,16 +1,18 @@
 ## Introduction to Python
 
-Find files containing exercises on fundamental topics of Python. 
+Find files containing exercises on fundamental topics of Python. See *?* for complete notes on introductory concepts with examples. Additionally, consult individuals files for specific topics.
 
 ### Basics
 
-Learn or refresh on some of the basics of Python. Explore code on variables and expressions. See `Basics.py` for the or consult the *Basics* category of the `Introduction to Python` files.
+Basic concepts in Python such as commands, operators, and variables. 
 
 ### Functions
 
+Details on writing simple functions in Python.
+
 ### Loops
 
-### Conditionals
+The different types of loops like **for**, **while**, and **if/then** loops
 
 ### Classes
 

@@ -14,38 +14,17 @@ If you have not already set up Python on your computer, check out [these notes](
 
 
 
-Python is generally regarded as an easy programming language to learn and is used in many introductory courses. Python scripts are denoted by the *.py* file type extension. Comments are denoted by the `#` symbol. 
+Python is generally regarded as an easy programming language to learn and is used in many introductory courses. Since it is a high-level language, it is very straightforward in operation. Python scripts are denoted by the *.py* file type extension associating that file with Python. These files can be opened with IDLE or some other IDE. Comments are denoted by the `#` symbol and all text after this symbol will not be executed by the program. It is good practice to write detailed comments that convey to yourself and the reader how your code works. This is useful for yourself and others when looking back at work that may not be fresh in your head so you can easily pick up what was happening. Python doesnt have scope. It uses spaces to determine where lines belong. This means that spacing matters; if a line does not have the correct number of spaces, Python will give an error because the command was in the wrong place. 
+
+
+# Introductory Concepts
+
+
+
+
+## Operators
+
 The boolean operators in Python are `True` and `False`. By default, Python does not have a read history for its commands. This means that pressing something such as the up arrow on your keyboard will not reload the previously run code into the console.
-
-
-Python doesnt have scope. It uses spaces to determine where lines belong. Spacing matters.
-
-
-# Misc Notes
-
-This means that anything followed by this symbol will not be considered code. It is good practice among programmers to make lots of comments in ones code explaining its function and implementation. It is beneficial for yourself and others in the long run to understand what is going on after breaks in working or trying to find errors.
-
-
-A variable in Python is a stored piece of information. This is done by first picking a name for your variable and then associating the desired information with that name. That way, anytime you refer to your chosen variable, Python will return the value that you stored. This can be overwritten if you assign new information to an already defined variable name. We explore these concepts with some examples below. 
-We can assign values to different variables. 
-
-
-
-
-def main(): defines the main function for the python file. If you have multiple different functions in the file you can keep the most crucial ones in the main function so they can be organized.
-
-
-if __name__ == "__main__":
-  main()
-
-the if name thing checks to see if the main function is there and executes this. It tells Python to execute the main function rather than other scripts and functions that may be embedded in the python script that should not be executed when loaded. 
-
-When Python file is run it assigns the name attribute to the main function and then executes the main function. This may be useful if you embedded different python files within other python files. in that case you may not want all the files to be executed when they are loaded so you do not envoke this work and allow other code to invoke them. z
-
-
-
-
-
 
 
 
@@ -210,7 +189,36 @@ def main():
 
 
 
-# References 
 
-Adapted from the course https://www.linkedin.com/learning/learning-python-2/the-date-time-and-datetime-classes?u=50850177
+
+# Misc Notes
+
+This means that anything followed by this symbol will not be considered code. It is good practice among programmers to make lots of comments in ones code explaining its function and implementation. It is beneficial for yourself and others in the long run to understand what is going on after breaks in working or trying to find errors.
+
+
+A variable in Python is a stored piece of information. This is done by first picking a name for your variable and then associating the desired information with that name. That way, anytime you refer to your chosen variable, Python will return the value that you stored. This can be overwritten if you assign new information to an already defined variable name. We explore these concepts with some examples below. 
+We can assign values to different variables. 
+
+
+
+
+def main(): defines the main function for the python file. If you have multiple different functions in the file you can keep the most crucial ones in the main function so they can be organized.
+
+
+if __name__ == "__main__":
+  main()
+
+the if name thing checks to see if the main function is there and executes this. It tells Python to execute the main function rather than other scripts and functions that may be embedded in the python script that should not be executed when loaded. 
+
+When Python file is run it assigns the name attribute to the main function and then executes the main function. This may be useful if you embedded different python files within other python files. in that case you may not want all the files to be executed when they are loaded so you do not envoke this work and allow other code to invoke them. z
+
+
+
+
+
+
+# Sources
+
+
+
 
