@@ -1,7 +1,7 @@
 ---
 title: "Data Science in Python"
 author: "Charles Ingulli"
-date: "6/2/2020"
+date: "6/24/2020"
 output: 
   html_document: default
   pdf_document: default
@@ -24,8 +24,7 @@ Scikit-learn has ml reg and classif
 Statsmodels
 
 
-
-# Reading in data
+## Reading in data
 
 there are various formats
 
@@ -50,16 +49,50 @@ df.to_csv("C:User/Desktop")
 ```
 
 
-# Analyzing data
+## Summarizing  data
+
+Operations are perfomed on columns 
+
+```{python}
+df["column"]
+```
+
+
 
 ```{python}
 df.dtypes()
 df.describe() # for numeric only; excludes non-number
 df.describe(include = "all")
 df.info() # top & bottom 30 rows
+
 ```
 
-## COnect to DB
+
+## The Search for Missing Values
+
+A missing value is a cell in a data set that does not have an entry. These are typically represented could be ? NA 0 
+
+
+Fixing errors and finding what missing value should be 
+
+You can drop data by dropping a variable with a lot of missing entries or deleting specific entries. This is not great because you lose information. 
+
+
+
+```{python}
+
+df.dropna(subset=["price"], axis=0)
+# inplace = True will perform the operation on the existing data set
+```
+
+```{python}
+df.replace(missing, new)
+```
+
+
+# Ancillary Topics
+
+## Connecting to a Database
 
 
 
@@ -88,26 +121,5 @@ connection.close()
 
 ```
 
-
-
-#PRocessessing 
-
-There can be missing values for a variety of reasons
-
-Operations are perfomed on columns 
-
-```{python}
-df["column"]
-```
-
-
-## Missing
-
-could be ? NA 0 
-
-
-Fixing errors and finding what missing value should be 
-
-You can drop data by dropping a variable with a lot of missing entries or deleting specific entries. This is not great because you lose information. 
 
 
