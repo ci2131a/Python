@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+
 Pandas data frames and manipulation 
 NumbPy arrays and matrices
 SciPy
@@ -26,14 +27,34 @@ Statsmodels
 
 ## Reading in data
 
+
+```{python}
+import pandas as pd
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data"
+Auto = pd.read_csv(url, header = None)
+Auto.head()
+```
+
+
 there are various formats
 
 tsv csv json xlsx
 
 ```{python}
 import pandas as pd
-data = ""
-df = pd.read_csv(,header = None)
+#data = ""
+df = pd.read_csv(url = "https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data",header = None)
+headers = ["symboling", "normalized-losses", "make", "fuel-type", "aspiration", 
+           "num-of-doors", "body-style", "drive-wheels", "engine-location", 
+           "wheel-base", "length", "width", "height", "curb-weight", 
+           "engine-type", "num-of-cylinders", "engine-size", "fuel-system", 
+           "bore", "stroke", "compression-ratio", "horsepower", "peak-rpm", 
+           "city-mpg", "highway-mpg", "price"]
+df.columns = headers
+df.replace("?", np.nan, True)
+df.dropna(subset=["price"], axis = 0, inplace = True)
+df["price"] = df["price"].astype("int")
+
 ```
 
 
@@ -121,5 +142,105 @@ connection.close()
 
 ```
 
+
+## Exploratory Data Analysis
+
+Is a learning experience in 
+
+An exploration of the data to learn more about it.
+
+
+### Descriptive Statistics
+
+
+
+Your mins your maxes your means and quartiles
+
+Missing values are excluded from these statistics.
+
+
+`value_counts()` will summarize categorical data. It is a method that can be applied to a categorical variable and will take the counts at each level. 
+
+
+
+Box plots are a good way to look at the distribution of data
+
+```{python}
+import seaborn as sns
+sns.boxplot(["A","B","C"],[1,2,3])
+```
+
+
+A Scatterplot is another good graphical tool for plotting data. These are especially good when both variables being plotted are quantitative variables. This is largely because these variables are number based and will also be refered to these as numerical variables.
+
+```{python}
+import matplotlib
+matplotlib.pyplot.scatter([1,2,3,4],[5,6,7,8])
+```
+
+
+```{python}
+import pandas as pd
+import numpy as np
+
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data"
+df = pd.read_csv(url,header = None)
+headers = ["symboling", "normalized-losses", "make", "fuel-type", "aspiration", 
+           "num-of-doors", "body-style", "drive-wheels", "engine-location", 
+           "wheel-base", "length", "width", "height", "curb-weight", 
+           "engine-type", "num-of-cylinders", "engine-size", "fuel-system", 
+           "bore", "stroke", "compression-ratio", "horsepower", "peak-rpm", 
+           "city-mpg", "highway-mpg", "price"]
+df.columns = headers
+df.replace("?", np.nan, True)
+df.dropna(subset=["price"], axis = 0, inplace = True)
+df["price"] = df["price"].astype("int")
+
+
+
+```
+
+
+```{python}
+y=df["price"]
+x=df["engine-size"]
+plt.pyplot.scatter(x, y)
+plt.pyplot.title("Scatterplot of Engine Size vs Price")
+plt.pyplot.xlabel("Engine Size")
+plt.pyplot.ylabel("Price")
+```
+
+## Groups
+
+
+In data science, you may want to look at summary statistics for different levels of a categorical level. We can do this by first grouping then data then applying our summary statistics methods.
+
+
+
+`.pivot()` method will transpose the data to a different format. If data is displayed along the rows then we can display it along the columns and vice versa.
+
+
+
+```{python}
+df_grp = df[["drive-wheels","body-style","price"]].groupby(["drive-wheels","body-style"],as_index = False).mean()
+print(df_grp)
+```
+
+
+```{python}
+df_pivot=df_grp.pivot(index = "drive-wheels", columns = "body-style")
+print(df_pivot)
+```
+
+
+HEATMAPPPSSSS
+
+
+```{python}
+import matplotlib as plt
+plt.pyplot.pcolor(df_pivot, cmap = "RdBu")
+plt.pyplot.colorbar()
+plt.pyplot.show()
+```
 
 
