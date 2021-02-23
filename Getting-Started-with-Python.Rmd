@@ -24,7 +24,7 @@ Python is a free and open source software that can be downloaded through their w
 
 ### Picking an IDE
 
-An **Integrated Development Environment (IDE)** is a specific type of software that can be used in conjuction with a programming language to allow you to create and edit programs. IDEs consist of at least these two basic components: a console and a text editor. The **console** is an interactive command session which takes commands and outputs results. The console functions similar to how a calculator does. A **text editor** is, as the name suggests, a program that allows you to modify any of the word related information in a file. Both the console amd text editor are crucial to programming as the latter allows you to write and edit code while the former runs and processes those commands.
+An **Integrated Development Environment (IDE)** is a specific type of software that can be used in conjuction with a programming language to allow you to create and edit programs. IDEs consist of at least these two basic components: a console and a text editor. The **console** is an interactive command session which takes commands and outputs results. The console functions similar to how a calculator does. A **text editor** is, as the name suggests, a program that allows you to modify any of the word related information in a file. Both the console and text editor are crucial to programming as the latter allows you to write and edit code while the former runs and processes those commands.
 
 
 Selecting an IDE is an important task as these are programs with which you can edit the code you have written before executing it. Most of the code you write is going to be contained in a **script** which is a text file that contains program code waiting to be executed. The IDE text editor will open the script file and allow you to mark it. Most IDEs also have the ability to check your code for any typos called a **syntax error**. Additionally through the console, they allow you to run your code and display the output to you. While an advanced IDE is not required, it is strongly encouraged. One benefit of Python is that is comes with an IDE! The Python IDE is called IDLE and comes bundled with the default download of the program. Following the download steps from the previous section will give you access to IDLE. Tips to use IDLE are discussed in the next section. Some other notable IDEs for Python include but are not limited to Spyder, Jupyter Notebook, Anaconda, and Visual Studio Code. A comprehensive list of Python IDEs can be found through Python's Wiki [here](https://wiki.python.org/moin/PythonEditors).
@@ -67,4 +67,4 @@ To return from the Python console to the R console type the following Python com
 exit
 ```
 
-See documentation for the R reticulate package for more information. 
+Check out the [documentation](https://rstudio.github.io/reticulate/index.html) for the `reticulate` package in R for more information. 
